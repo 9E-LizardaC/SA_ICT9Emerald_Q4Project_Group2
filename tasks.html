@@ -7,124 +7,35 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<style>
-
-body{
-    background: linear-gradient(to bottom right, #020412, #071a3d, #000000);
-    color: white;
-    overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* STAR BACKGROUND */
-body::before{
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(#4da6ff 1px, transparent 1px);
-    background-size: 50px 50px, 100px 100px;
-    opacity: 0.15;
-    z-index: -1;
-}
-
-.sidebar {
-    top: 0;
-    left: 0;
-    width: 15%;
-    height: 100%;
-    border-right: 1px solid #2f6dff;
-    position: fixed;
-    padding-top: 30px;
-    text-align: center;
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 20px #0d6efd;
-}
-
-.main {
-    margin-left: 15%;
-    padding: 20px;
-}
-
-.sidebar a{
-    color: #7ec8ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.sidebar a:hover{
-    color: white;
-    text-shadow: 0 0 10px #0d6efd;
-}
-
-.card{
-    background: rgba(10, 20, 40, 0.85);
-    border: 1px solid #0d6efd;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(13,110,253,0.4);
-    transition: 0.3s;
-}
-
-.card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(13,110,253,0.7);
-}
-
-.card-header{
-    background: rgba(13,110,253,0.2);
-    border-bottom: 1px solid #0d6efd;
-}
-
-.list-group-item{
-    background: transparent;
-    color: white;
-    border-color: rgba(255,255,255,0.1);
-}
-
-.btn-primary{
-    background: linear-gradient(to right, #0d6efd, #3b82f6);
-    border: none;
-    border-radius: 12px;
-}
-
-.btn-primary:hover{
-    background: linear-gradient(to right, #3b82f6, #60a5fa);
-}
-
-img{
-    border-radius: 12px;
-}
-
-.logo{
-    border-radius: 50%;
-    box-shadow: 0 0 20px #0d6efd;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 <body>
 
 
 
-  <div class="container">
-    <div class="row">
 
 <div class="sidebar col">
-<img src="placeholder_logo.png"
-    style="width: 50%; height: auto;"> 
-<br><br><br>
-<div style="font: size 5vw;">
-<a href="index.html"> Home </a> <br><br>
-<a href="tasks.html"> Tasks </a> <br><br>
-<a href="vnlist.html"> Virtual Notebooks </a> <br><br>
-<a href="profile.html"> Profile </a> <br><br><br><br><br><br>
-<a href="logout.html"> Logout </a>
-</div>
-</div>
+
+        <img src="Logo.png"
+        class="logo"
+        style="width: 50%; height: auto;">
+
+        <br><br><br>
+
+        <div style="font-size: 1.2vw;">
+
+            <a href="index.html"> Home </a> <br><br>
+
+            <a href="tasks.html"> Tasks </a> <br><br>
+
+            <a href="vnlist.html"> Virtual Notebooks </a> <br><br>
+
+            <a href="profile.html"> Profile </a> <br><br><br><br><br><br>
+
+            <a href="logout.html"> Logout </a>
+
+        </div>
+
+    </div>
 <div class="main row">
 
 
