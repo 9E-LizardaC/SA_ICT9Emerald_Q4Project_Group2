@@ -1,172 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Virtual Notebooks</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+
 <style>
-    .sidebar {
-        top: 0;
-        left: 0;
-        width: 15%;
-        height: 100%;
-        border-right: 1px solid black;
-        position: fixed;
-        padding-top: 30px;
-        text-align: center;;
-        }
-    .main {
-        padding-left: 18%;
-    }
+
+body{
+    background: linear-gradient(to bottom right, #020412, #071a3d, #000000);
+    color: white;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* STARS */
+body::before{
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#4da6ff 1px, transparent 1px);
+    background-size: 50px 50px, 100px 100px;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.sidebar {
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid #2f6dff;
+    position: fixed;
+    padding-top: 30px;
+    text-align: center;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px #0d6efd;
+}
+
+.main {
+    padding-left: 18%;
+    padding-right: 30px;
+}
+
+.sidebar a{
+    color: #7ec8ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sidebar a:hover{
+    color: white;
+    text-shadow: 0 0 10px #0d6efd;
+}
+
+.card{
+    background: rgba(10, 20, 40, 0.85);
+    border: 1px solid #0d6efd;
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(13,110,253,0.4);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 30px rgba(13,110,253,0.8);
+}
+
+.card-body{
+    padding: 20px;
+}
+
+.card-title{
+    font-weight: bold;
+    color: #9fd3ff;
+}
+
+.card-img-top{
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+    border-radius: 50%;
+    box-shadow: 0 0 20px #0d6efd;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #8cc8ff;
+    text-shadow: 0 0 15px #0d6efd;
+}
+
+.subtitle{
+    color: #b8dfff;
+    font-size: 1.1rem;
+}
+
 </style>
+</head>
+
 <body>
-  
+
+<!-- SIDEBAR -->
 <div class="sidebar">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+    class="logo"
     style="width: 50%; height: auto;"> 
-<br><br><br>
-<div style="font: size 5vw;">
-<a href="index.html"> Home </a> <br><br>
-<a href="tasks.html"> Tasks </a> <br><br>
-<a href="vnlist.html"> Virtual Notebooks </a> <br><br>
-<a href="profile.html"> Profile </a> <br><br><br><br><br><br>
-<a href="login.html"> Logout </a>
-</div>
+
+    <br><br><br>
+
+    <div style="font-size: 1.1vw;">
+
+        <a href="index.html"> Home </a> <br><br>
+
+        <a href="tasks.html"> Tasks </a> <br><br>
+
+        <a href="vnlist.html"> Virtual Notebooks </a> <br><br>
+
+        <a href="profile.html"> Profile </a> <br><br><br><br><br><br>
+
+        <a href="login.html"> Logout </a>
+
+    </div>
+
 </div>
 
-<div class="main" style="text-align: center;">
- <br><br><br> 
+<!-- MAIN -->
+<div class="main text-center">
+
+    <br><br><br>
+
     <h2>Virtual Notebooks</h2>
+
     <br>
-    <p>You are currently in 12 classes</p>
+
+    <p class="subtitle">
+        You are currently enrolled in 12 interstellar classes
+    </p>
+
     <br><br>
-  <!--gang i just copy pasted the same card for all of them :skull: just change the image for them to whatever you need it to be-->
+
     <div class="container">
-     <div class="row">
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Physical Enhancement Training </h5>
+
+    <div class="row g-4">
+
+        <!-- CARD -->
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Physical Enhancement Training</h5>
+                </div>
             </div>
         </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">ZeepZorp 101</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Artificial Intelligence Education</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Numerical Theory</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Xenial Melodies</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Intergalactic Law</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Spacial Studies</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">English</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Post-Terran History</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Limitology</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Universal Cuisine</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="ijusthitthejackpot.png" class="card-img-top">
+                    <br><br>
+                    <h5 class="card-title">Physical Enhancement Training</h5>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="col-sm">
-      <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> ZeepZorp 101 </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Artificial Intelligence Education </h5>
-            </div>
-        </div>
     </div>
 
-   <div class="w-100" style="padding-bottom: 30px;"></div>
+    <br><br><br>
 
-   <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Numerical Theory </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Xenial Melodies  </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Intergalactic Law </h5>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-100" style="padding-bottom: 30px;"></div>
-
-   <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Spacial Studies </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> English </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Post-Terran History </h5>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-100" style="padding-bottom: 30px;"></div>
-
-   <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Limitology </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Universal Cuisine </h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card h-100">
-            <div class="card-body">
-            <img src="ijusthitthejackpot.png" class="card-img-top"> 
-            <br><br>
-            <h5 class="card-title"> Physical Enhancement Training </h5>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-
-
+</div>
 
 </body>
 </html>
