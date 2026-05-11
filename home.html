@@ -1,197 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Space Dashboard</title>
+
+  <title>Singularity Academy Dashboard</title>
+
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top, rgba(13,110,253,0.18), transparent 35%),
+    linear-gradient(to bottom right, #020412, #071a3d, #000000);
+    color:white;
+    overflow-x:hidden;
+    font-family:'Poppins', sans-serif;
+    position:relative;
+}
+
+/* STAR BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#4da6ff 1px, transparent 1px);
+    background-size:50px 50px, 100px 100px;
+    opacity:0.12;
+    z-index:-2;
+}
+
+/* GLOW */
+
+body::after{
+    content:"";
+    position:fixed;
+    top:-150px;
+    right:-150px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(13,110,253,0.25), transparent 70%);
+    z-index:-3;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    min-height:100vh;
+    background:rgba(7,17,35,0.92);
+    backdrop-filter:blur(12px);
+    border-right:1px solid rgba(255,255,255,0.08);
+    padding:30px 20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    width:120px !important;
+    height:120px !important;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid rgba(255,255,255,0.08);
+    box-shadow:
+    0 0 20px #0d6efd,
+    0 0 50px rgba(13,110,253,0.4);
+}
+
+/* SIDEBAR LINKS */
+
+.sidebar a{
+    display:block;
+    color:#7ec8ff;
+    text-decoration:none;
+    font-weight:600;
+    margin:18px 0;
+    padding:12px;
+    border-radius:14px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    color:white;
+    background:rgba(13,110,253,0.18);
+    transform:translateX(5px);
+    box-shadow:0 0 15px rgba(13,110,253,0.3);
+}
+
+/* MAIN */
+
+.main{
+    padding:30px;
+}
+
+/* CARDS */
+
+.card{
+    background:rgba(10,20,40,0.88);
+    border:1px solid rgba(13,110,253,0.3);
+    border-radius:28px;
+    overflow:hidden;
+    color:white;
+    backdrop-filter:blur(12px);
+    box-shadow:
+    0 0 20px rgba(13,110,253,0.25),
+    0 0 50px rgba(13,110,253,0.1);
+    transition:0.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 0 35px rgba(13,110,253,0.6),
+    0 0 70px rgba(13,110,253,0.18);
+}
+
+.card-body{
+    padding:25px;
+}
+
+/* TITLES */
+
+.card-title{
+    color:#9fd3ff;
+    font-weight:700;
+    font-family:'Orbitron', sans-serif;
+}
+
+h2{
+    color:#8cc8ff;
+    text-shadow:0 0 15px #0d6efd;
+    font-family:'Orbitron', sans-serif;
+}
+
+/* IMAGES */
+
+.card-img-top{
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.card-img-top:hover{
+    transform:scale(1.02);
+}
+
+/* PROFILE IMAGE */
+
+.profile-mini{
+    width:55px !important;
+    height:55px !important;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 15px rgba(13,110,253,0.4);
+}
+
+/* TEXT */
+
+p{
+    color:#d4e8ff;
+    line-height:1.7;
+}
+
+/* TASK PANEL */
+
+.list-group-item{
+    background:transparent;
+    color:white;
+    border-color:rgba(255,255,255,0.08);
+    padding:18px;
+    transition:0.3s;
+}
+
+.list-group-item:hover{
+    background:rgba(13,110,253,0.12);
+}
+
+/* BUTTON */
+
+.btn{
+    border:none;
+    border-radius:14px;
+    padding:10px 20px;
+    background:linear-gradient(135deg,#0d6efd,#4da6ff);
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(13,110,253,0.6);
+}
+
+/* TASK PANEL STICKY */
+
+.tasks-panel{
+    position:sticky;
+    top:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+    .tasks-panel{
+        position:relative;
+        top:auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        min-height:auto;
+        position:relative;
+    }
+
+    .main{
+        padding:20px;
+    }
+
+}
+
+</style>
   
 </head>
 
 <body>
 
 <div class="container-fluid">
+
 <div class="row">
 
     <!-- SIDEBAR -->
-    <div class="sidebar col">
+
+    <div class="sidebar col-lg-2">
 
         <img src="placeholder_logo.png"
-        class="logo"
-        style="width: 50%; height: auto;">
+        class="logo">
 
         <br><br><br>
 
-        <div style="font-size: 1.2vw;">
+        <div>
 
-            <a href="home.html"> Home </a> <br><br>
+            <a href="home.html">🏠 Home</a>
 
-            <a href="tasks.html"> Tasks </a> <br><br>
+            <a href="tasks.html">📚 Tasks</a>
 
-            <a href="vnlist.html"> Virtual Notebooks </a> <br><br>
+            <a href="vnlist.html">📓 Virtual Notebooks</a>
 
-            <a href="profile.html"> Profile </a> <br><br><br><br><br><br>
+            <a href="profile.html">👨‍🚀 Profile</a>
 
-            <a href="index.html"> Logout </a>
+            <br><br><br><br>
+
+            <a href="index.html">🚪 Logout</a>
 
         </div>
 
     </div>
 
     <!-- MAIN CONTENT -->
-    <div class="main row">
 
-        <!-- POSTS -->
-        <div class="col m-2">
+    <div class="main col-lg-10">
 
-            <!-- POST 1 -->
-            <div class="card my-5" style="width: 36rem;">
+        <div class="row">
 
-                <div class="card-body mt-2">
+            <!-- POSTS -->
 
-                    <div class="row align-items-start">
+            <div class="col-lg-8">
 
-                        <img src="placeholder_logo.png"
-                        class="my-2"
-                        style="width: 12%; height: auto;">
+                <!-- POST 1 -->
 
-                        <div class="col">
+                <div class="card my-4">
 
-                            <h5 class="card-title">
-                                <b>Card Title</b>
-                            </h5>
+                    <div class="card-body">
 
-                            <p><i>Put Date Here</i></p>
+                        <div class="d-flex align-items-center mb-3">
+
+                            <img src="placeholder_logo.png"
+                            class="profile-mini me-3">
+
+                            <div>
+
+                                <h5 class="card-title mb-1">
+                                    Card Title
+                                </h5>
+
+                                <p class="mb-0">
+                                    <i>Put Date Here</i>
+                                </p>
+
+                            </div>
 
                         </div>
 
+                        <img src="aniqtoohigh.png"
+                        class="card-img-top my-3">
+
+                        <p class="my-3">
+                            Some quick example text to build on the card title and make up the bulk of the card’s content.
+                        </p>
+
                     </div>
 
-                    <img src="aniqtoohigh.png"
-                    class="card-img-top my-2"
-                    style="width: 100%; height: auto;">
+                </div>
 
-                    <p class="my-2">
-                        Some quick example text to build on the card title and make up the bulk of the card’s content.
-                    </p>
+                <!-- POST 2 -->
+
+                <div class="card my-4">
+
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3">
+
+                            <img src="placeholder_logo.png"
+                            class="profile-mini me-3">
+
+                            <div>
+
+                                <h5 class="card-title mb-1">
+                                    Japan is turning footsteps into electricity
+                                </h5>
+
+                                <p class="mb-0">
+                                    <i>June 7th, 2067</i>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <img src="aniqtoohigh.png"
+                        class="card-img-top my-3">
+
+                        <p class="my-3">
+                            Japan is turning footsteps into electricity! Using piezoelectric tiles, every step you take generates a small amount of energy.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- POST 3 -->
+
+                <div class="card my-4">
+
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3">
+
+                            <img src="placeholder_logo.png"
+                            class="profile-mini me-3">
+
+                            <div>
+
+                                <h5 class="card-title mb-1">
+                                    youre not supposed to be here
+                                </h5>
+
+                                <p class="mb-0">
+                                    <i>...</i>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <img src="thousandkissstare.png"
+                        class="card-img-top my-3">
+
+                        <p class="my-3">
+                            theyre all gone...
+                        </p>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- POST 2 -->
-            <div class="card my-5" style="width: 36rem;">
+            <!-- TASK PANEL -->
 
-                <div class="card-body mt-2">
+            <div class="col-lg-4">
 
-                    <div class="row align-items-start">
+                <div class="tasks-panel">
 
-                        <img src="placeholder_logo.png"
-                        class="my-2"
-                        style="width: 12%; height: auto;">
+                    <div class="card my-4">
 
-                        <div class="col">
+                        <div class="card-header bg-transparent border-0 pt-4">
 
-                            <h5 class="card-title">
-                                <b>Japan is turning footsteps into electricity</b>
-                            </h5>
+                            <h2>
+                                Tasks
+                            </h2>
 
-                            <p><i>June 7th, 2067</i></p>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">
+                                <i><b>June, 7</b></i> - Task 1
+                            </li>
+
+                            <li class="list-group-item">
+                                <i><b>Friday, 13</b></i> - Task 2
+                            </li>
+
+                            <li class="list-group-item">
+                                <i><b>January, 16</b></i> - The elusive, third task
+                            </li>
+
+                            <li class="list-group-item">
+                                <i><b>December, 5</b></i> - Task 4
+                            </li>
+
+                            <li class="list-group-item">
+                                <i><b>May 3</b></i> - Task 5
+                            </li>
+
+                        </ul>
+
+                        <div class="card-footer bg-transparent border-0 p-4">
+
+                            <a href="tasks.html" class="btn">
+                                See All Tasks
+                            </a>
 
                         </div>
 
                     </div>
-
-                    <img src="aniqtoohigh.png"
-                    class="my-2 card-img-top"
-                    alt="...">
-
-                    <p class="my-2">
-                        Japan is turning footsteps into electricity! Using piezoelectric tiles, every step you take generates a small amount of energy.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- POST 3 -->
-            <div class="card my-5" style="width: 36rem;">
-
-                <div class="card-body mt-2">
-
-                    <div class="row align-items-start">
-
-                        <img src="placeholder_logo.png"
-                        class="my-2"
-                        style="width: 12%; height: auto;">
-
-                        <div class="col">
-
-                            <h5 class="card-title">
-                                <b>youre not supposed to be here</b>
-                            </h5>
-
-                            <p><i>...</i></p>
-
-                        </div>
-
-                    </div>
-
-                    <img src="thousandkissstare.png"
-                    class="my-2 card-img-top"
-                    alt="...">
-
-                    <p class="my-2">
-                        theyre all gone...
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- TASK PANEL -->
-        <div class="col my-3">
-
-            <div class="card my-5" style="width: 18rem;">
-
-                <div class="card-header">
-                    <h2><b><i>Tasks</i></b></h2>
-                </div>
-
-                <ul class="list-group list-group-flush">
-
-                    <li class="list-group-item">
-                        <i><b>June, 7</b></i> - Task 1
-                    </li>
-
-                    <li class="list-group-item">
-                        <i><b>Friday, 13</b></i> - Task 2
-                    </li>
-
-                    <li class="list-group-item">
-                        <i><b>January, 16</b></i> - The elusive, third task
-                    </li>
-
-                    <li class="list-group-item">
-                        <i><b>December, 5</b></i> - Task 4
-                    </li>
-
-                    <li class="list-group-item">
-                        <i><b>May 3</b></i> - Task 5
-                    </li>
-
-                </ul>
-
-                <div class="card-footer">
-
-                    <a href="tasks.html" class="btn btn-primary">
-                        See All Tasks
-                    </a>
 
                 </div>
 
@@ -202,17 +462,21 @@
     </div>
 
 </div>
+
 </div>
 
 <script>
 
-    const StudentID = localStorage.getItem('student_id');
-    const Password = localStorage.getItem('password');
+const StudentID = localStorage.getItem('student_id');
 
-    localStorage.setItem('student_id', StudentID);
-    localStorage.setItem('password', Password);
+const Password = localStorage.getItem('password');
+
+localStorage.setItem('student_id', StudentID);
+
+localStorage.setItem('password', Password);
 
 </script>
 
 </body>
+
 </html>
