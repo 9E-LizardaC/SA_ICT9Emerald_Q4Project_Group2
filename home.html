@@ -67,14 +67,17 @@ body::after{
 /* SIDEBAR */
 
 .sidebar{
-    min-height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    width:240px;
+    height:100vh;
     background:rgba(7,17,35,0.92);
     backdrop-filter:blur(12px);
     border-right:1px solid rgba(255,255,255,0.08);
     padding:30px 20px;
     text-align:center;
-    position:sticky;
-    top:0;
+    z-index:1000;
 }
 
 .logo{
@@ -111,7 +114,8 @@ body::after{
 /* MAIN */
 
 .main{
-    padding:30px;
+    margin-left:260px;
+    padding:40px;
 }
 
 /* CARDS */
@@ -252,15 +256,11 @@ p{
 
 <body>
 
-<div class="container-fluid">
-
-<div class="row">
-
     <!-- SIDEBAR -->
 
-    <div class="sidebar col-lg-2">
+    <div class="sidebar">
 
-        <img src="placeholder_logo.png"
+        <img src="Logo.png"
         class="logo">
 
         <br><br><br>
@@ -275,7 +275,7 @@ p{
 
             <a href="profile.html">👨‍🚀 Profile</a>
 
-            <br><br><br><br>
+            <br><br><br>
 
             <a href="index.html">🚪 Logout</a>
 
@@ -283,171 +283,184 @@ p{
 
     </div>
 
-    <!-- MAIN CONTENT -->
-
-    <div class="main col-lg-10">
+    <div class="container-fluid">
 
         <div class="row">
 
-            <!-- POSTS -->
+            <!-- MAIN CONTENT -->
 
-            <div class="col-lg-8">
+            <div class="main">
 
-                <!-- POST 1 -->
+                <div class="row">
 
-                <div class="card my-4">
+                    <!-- POSTS -->
 
-                    <div class="card-body">
+                    <div class="col-lg-6 col-md-12">
 
-                        <div class="d-flex align-items-center mb-3">
+                        <!-- POST 1 -->
 
-                            <img src="placeholder_logo.png"
-                            class="profile-mini me-3">
+                        <div class="card my-4">
 
-                            <div>
+                            <div class="card-body">
 
-                                <h5 class="card-title mb-1">
-                                    Card Title
-                                </h5>
+                                <div class="d-flex align-items-center mb-3">
 
-                                <p class="mb-0">
-                                    <i>Put Date Here</i>
+                                    <img src="Images/ProfilePics/pf1.png"
+                                    class="profile-mini me-3">
+
+                                    <div>
+
+                                        <h5 class="card-title mb-1">
+                                        Welcome to Singularity Academy!
+                                        </h5>
+
+                                        <p class="mb-0">
+                                            <i>Stellar Day 2121</i>
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <img src="Logo.png"
+                                class="card-img-top my-3">
+
+                                <p class="my-3">
+                                Welcome to Singularity Academy!
+                                Founded by Stefan Leona Pada's Decendant, Clyde Pada,
+                                our goal is to fund the future! Here at Singularity Academy, 
+                                we will teleport you, to your future!
+                                
                                 </p>
 
                             </div>
 
                         </div>
 
-                        <img src="aniqtoohigh.png"
-                        class="card-img-top my-3">
+                        <!-- POST 2 -->
 
-                        <p class="my-3">
-                            Some quick example text to build on the card title and make up the bulk of the card’s content.
-                        </p>
+                        <div class="card my-4">
 
-                    </div>
+                            <div class="card-body">
 
-                </div>
+                                <div class="d-flex align-items-center mb-3">
 
-                <!-- POST 2 -->
+                                    <img src="Images/ProfilePics/pf2.png"
+                                    class="profile-mini me-3">
 
-                <div class="card my-4">
+                                    <div>
 
-                    <div class="card-body">
+                                        <h5 class="card-title mb-1">
+                                            Japan is turning footsteps into electricity, and so are we!
+                                        </h5>
 
-                        <div class="d-flex align-items-center mb-3">
+                                        <p class="mb-0">
+                                            <i>Stellar Day 2121</i>
+                                        </p>
 
-                            <img src="placeholder_logo.png"
-                            class="profile-mini me-3">
+                                    </div>
 
-                            <div>
+                                </div>
 
-                                <h5 class="card-title mb-1">
-                                    Japan is turning footsteps into electricity
-                                </h5>
+                                <img src="aniqtoohigh.png"
+                                class="card-img-top my-3">
 
-                                <p class="mb-0">
-                                    <i>June 7th, 2067</i>
+                                <p class="my-3">
+                                    Japan is turning footsteps into electricity! Using piezoelectric tiles, every step you take generates a small amount of energy.
+                                    Here at Singularity Academy, we've implemented this too!
                                 </p>
 
                             </div>
 
                         </div>
 
-                        <img src="aniqtoohigh.png"
-                        class="card-img-top my-3">
+                        <!-- POST 3 -->
 
-                        <p class="my-3">
-                            Japan is turning footsteps into electricity! Using piezoelectric tiles, every step you take generates a small amount of energy.
-                        </p>
+                        <div class="card my-4">
 
-                    </div>
+                            <div class="card-body">
 
-                </div>
+                                <div class="d-flex align-items-center mb-3">
 
-                <!-- POST 3 -->
+                                    <img src="thousandkissstare.png"
+                                    class="profile-mini me-3">
 
-                <div class="card my-4">
+                                    <div>
 
-                    <div class="card-body">
+                                        <h5 class="card-title mb-1">
+                                            youre not supposed to be here
+                                        </h5>
 
-                        <div class="d-flex align-items-center mb-3">
+                                        <p class="mb-0">
+                                            <i>...</i>
+                                        </p>
 
-                            <img src="placeholder_logo.png"
-                            class="profile-mini me-3">
+                                    </div>
 
-                            <div>
+                                </div>
 
-                                <h5 class="card-title mb-1">
-                                    youre not supposed to be here
-                                </h5>
+                                <img src="thousandkissstare.png"
+                                class="card-img-top my-3">
 
-                                <p class="mb-0">
-                                    <i>...</i>
+                                <p class="my-3">
+                                    theyre all gone...
                                 </p>
 
                             </div>
 
                         </div>
 
-                        <img src="thousandkissstare.png"
-                        class="card-img-top my-3">
-
-                        <p class="my-3">
-                            theyre all gone...
-                        </p>
-
                     </div>
 
-                </div>
+                    <!-- TASK PANEL -->
 
-            </div>
+                    <div class="col-lg-4">
 
-            <!-- TASK PANEL -->
+                        <div class="tasks-panel">
 
-            <div class="col-lg-4">
+                            <div class="card my-4">
 
-                <div class="tasks-panel">
+                                <div class="card-header bg-transparent border-0 pt-4">
 
-                    <div class="card my-4">
+                                    <h2>
+                                        Tasks
+                                    </h2>
 
-                        <div class="card-header bg-transparent border-0 pt-4">
+                                </div>
 
-                            <h2>
-                                Tasks
-                            </h2>
+                                <ul class="list-group list-group-flush">
 
-                        </div>
+                                    <li class="list-group-item">
+                                        <i><b>June, 7</b></i> - Task 1
+                                    </li>
 
-                        <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i><b>Friday, 13</b></i> - Task 2
+                                    </li>
 
-                            <li class="list-group-item">
-                                <i><b>June, 7</b></i> - Task 1
-                            </li>
+                                    <li class="list-group-item">
+                                        <i><b>January, 16</b></i> - The elusive, third task
+                                    </li>
 
-                            <li class="list-group-item">
-                                <i><b>Friday, 13</b></i> - Task 2
-                            </li>
+                                    <li class="list-group-item">
+                                        <i><b>December, 5</b></i> - Task 4
+                                    </li>
 
-                            <li class="list-group-item">
-                                <i><b>January, 16</b></i> - The elusive, third task
-                            </li>
+                                    <li class="list-group-item">
+                                        <i><b>May 3</b></i> - Task 5
+                                    </li>
 
-                            <li class="list-group-item">
-                                <i><b>December, 5</b></i> - Task 4
-                            </li>
+                                </ul>
 
-                            <li class="list-group-item">
-                                <i><b>May 3</b></i> - Task 5
-                            </li>
+                                <div class="card-footer bg-transparent border-0 p-4">
 
-                        </ul>
+                                    <a href="tasks.html" class="btn">
+                                        See All Tasks
+                                    </a>
 
-                        <div class="card-footer bg-transparent border-0 p-4">
+                                </div>
 
-                            <a href="tasks.html" class="btn">
-                                See All Tasks
-                            </a>
+                            </div>
 
                         </div>
 
@@ -460,8 +473,6 @@ p{
         </div>
 
     </div>
-
-</div>
 
 </div>
 
