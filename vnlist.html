@@ -109,74 +109,46 @@ body::after{
     z-index:1000;
 }
 
-/* LOGO */
+.sidebar{
+    min-height:100vh;
+    background:rgba(7,17,35,0.92);
+    backdrop-filter:blur(12px);
+    border-right:1px solid rgba(255,255,255,0.08);
+    padding:30px 20px;
+    text-align:center;
+    top:0;
+}
 
 .logo{
-
-    width:130px !important;
-    height:130px !important;
-
+    width:120px !important;
+    height:120px !important;
     border-radius:50%;
-
     object-fit:cover;
-
-    display:block;
-
-    margin:auto;
-
-    background:#02122d;
-
+    border:3px solid rgba(255,255,255,0.08);
     box-shadow:
     0 0 20px #0d6efd,
-    0 0 45px rgba(13,110,253,0.35);
+    0 0 50px rgba(13,110,253,0.4);
 }
 
-/* LINK CONTAINER */
-
-.sidebar-links{
-
-    margin-top:55px;
-
-    padding-left:28px;
-}
-
-/* LINKS */
+/* SIDEBAR LINKS */
 
 .sidebar a{
-
     display:block;
-
-    width:fit-content;
-
-    color:#8ecbff;
-
+    color:#7ec8ff;
     text-decoration:none;
-
-    font-size:1.35rem;
-
-    font-weight:bold;
-
-    padding:10px 14px;
-
-    margin:24px 0;
-
+    font-weight:600;
+    margin:18px 0;
+    padding:12px;
     border-radius:14px;
-
-    transition:0.3s ease;
+    transition:0.3s;
 }
 
 .sidebar a:hover{
-
     color:white;
-
-    background:rgba(13,110,253,0.14);
-
-    transform:translateX(6px);
-
-    box-shadow:
-    0 0 14px rgba(13,110,253,0.28);
+    background:rgba(13,110,253,0.18);
+    transform:translateX(5px);
+    box-shadow:0 0 15px rgba(13,110,253,0.3);
 }
-
 /* MAIN */
 
 .main{
@@ -350,6 +322,7 @@ body::after{
 
     <img src="Logo.png"
     class="logo">
+    <br><br><br>
 
     <div class="sidebar-links">
 
@@ -361,7 +334,7 @@ body::after{
 
         <a href="profile.html">👨‍🚀 Profile</a>
 
-        <br><br>
+        <br><br><br>
 
         <a href="index.html">🚪 Logout</a>
 
@@ -438,7 +411,7 @@ body::after{
 
                     <div class="card-body">
 
-                        <img src="Images/VnList/AIEducation.png"
+                        <img src="Images/VnList/AI.png"
                         class="card-img-top">
 
                         <h5 class="card-title">
