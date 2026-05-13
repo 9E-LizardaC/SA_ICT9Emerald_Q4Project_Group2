@@ -62,52 +62,89 @@ body::before{
 /* SIDEBAR */
 
 .sidebar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:250px;
-  height:100vh;
-  background:rgba(7, 17, 35, 0.95);
-  backdrop-filter:blur(10px);
-  border-right:1px solid rgba(255,255,255,0.08);
-  padding:30px 20px;
-  text-align:center;
-  box-shadow:0 0 25px rgba(13,110,253,0.2);
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:240px;
+    height:100vh;
+
+    background:rgba(2,10,28,0.97);
+
+    border-right:1px solid rgba(255,255,255,0.08);
+
+    padding-top:15px;
+
+    text-align:left;
+
+    z-index:1000;
+}
+
+.sidebar{
+    min-height:100vh;
+    background:rgba(7,17,35,0.92);
+    backdrop-filter:blur(12px);
+    border-right:1px solid rgba(255,255,255,0.08);
+    padding:30px 20px;
+    text-align:center;
+    top:0;
 }
 
 .logo{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 0 25px #0d6efd;
-  border:3px solid rgba(255,255,255,0.1);
+    width:120px !important;
+    height:120px !important;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid rgba(255,255,255,0.08);
+    box-shadow:
+    0 0 20px #0d6efd,
+    0 0 50px rgba(13,110,253,0.4);
 }
 
-.sidebar-title{
-  margin-top:15px;
-  font-family:'Orbitron', sans-serif;
-  color:#9fd3ff;
-  font-size:1rem;
-  letter-spacing:2px;
-}
+/* SIDEBAR LINKS */
 
 .sidebar a{
-  display:block;
-  color:#7ec8ff;
-  text-decoration:none;
-  margin:18px 0;
-  font-weight:500;
-  transition:0.3s;
-  padding:10px;
-  border-radius:12px;
+    display:block;
+    color:#7ec8ff;
+    text-decoration:none;
+    font-weight:600;
+    margin:18px 0;
+    padding:12px;
+    border-radius:14px;
+    transition:0.3s;
 }
 
 .sidebar a:hover{
-  background:rgba(13,110,253,0.2);
-  color:white;
-  transform:translateX(5px);
-  box-shadow:0 0 15px rgba(13,110,253,0.3);
+    color:white;
+    background:rgba(13,110,253,0.18);
+    transform:translateX(5px);
+    box-shadow:0 0 15px rgba(13,110,253,0.3);
+}
+
+/* MAIN */
+
+.main{
+
+    margin-left:240px;
+
+    padding:35px;
+}
+
+/* TITLE */
+
+.main h2{
+
+    font-size:3.6rem;
+
+    font-weight:bold;
+
+    color:#9bd0ff;
+
+    text-shadow:
+    0 0 15px #0d6efd,
+    0 0 35px rgba(13,110,253,0.45);
 }
 
 /* MAIN */
@@ -283,13 +320,9 @@ body::before{
 
 <div class="sidebar">
 
-  <img src="Images/logo.png" class="logo">
+  <img src="Logo.png" class="logo">
 
-  <div class="sidebar-title">
-    SINGULARITY ACADEMY
-  </div>
-
-  <br><br>
+  <br><br><br>
 
   <a href="home.html">🏠 Home</a>
 
@@ -326,7 +359,7 @@ body::before{
       <div class="glow-ring"></div>
 
       <img
-      src="placeholder_profile.png"
+      src="placeholder_logo.png"
       id="pfp">
 
     </div>
@@ -396,3 +429,4 @@ userfile.addEventListener('change', () => {
 
 </body>
 </html>
+
